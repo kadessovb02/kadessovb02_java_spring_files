@@ -6,6 +6,8 @@ public class AnimalMain_ver2{
     public static void main(String[] args) {
         ArrayList<Animal> animal = new ArrayList<>();
         animal.add(new Dog("Laika"));
+        animal.add(new Cat("Tigrenok"));
+        animal.add(new Horse("Bucifal"));
         Veterinary vt = new Veterinary();
         vt.treatAnimal(animal);
     }
@@ -56,7 +58,6 @@ class Horse extends Animal{
 class Veterinary{
     void treatAnimal(ArrayList<Animal> animalList){
         for (Animal animal : animalList) {
-
             animal.eat();
             if(animal instanceof Dog){
                 animal.food = "meat";
