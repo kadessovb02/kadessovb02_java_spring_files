@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans  xmlns="http://www.springframework.org/schema/beans"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns:context="http://www.springframework.org/schema/context"
+        xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/context
+        http://www.springframework.org/schema/context/spring-context.xsd">
+    <context:property-placeholder location="application.properties"/>
+    <bean id="student"
+          init-method="init"
+          destroy-method="destroy"
+          class="com.example.student_ioc.Student"
+          scope="prototype">
+        <property name="name" value="${student.name}" />
+        <property name="id" value="${student.id}" />
+        <property name="age" value="${student.age}" />
+        <property name="address" value="${student.address}" />
+        <property name="gpa" value="${student.gpa}" />
+    </bean>
+</beans>
